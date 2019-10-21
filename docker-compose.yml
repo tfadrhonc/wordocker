@@ -24,9 +24,11 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_FS_METHOD: direct
     volumes:
       #- ./plugins/new-plugin:/var/www/html/wp-content/plugins/new-plugin
       - ./themes/new-theme:/var/www/html/wp-content/themes/new-theme
+      - ./wordpress:/var/www/html
       
   phpmyadmin:
     depends_on:
